@@ -87,9 +87,18 @@ jobs:
             echo "Previous tag: $PREVIOUS_TAG"
             CHANGELOG=$(git log ${PREVIOUS_TAG}..HEAD --pretty=format:"- %s (%h)" --reverse)
           fi
-          echo "CHANGELOG<<EOF" >> $GITHUB_ENV
-          echo "$CHANGELOG" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          
+          # For debugging
+          echo "Generated changelog:"
+          echo "$CHANGELOG"
+          
+          # Write changelog to file for later use
+          echo "$CHANGELOG" > changelog.txt
+          
+          # Set output for this step to be used later
+          echo "changelog_text<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
       
       # Rename APKs for easier identification
       - name: Rename APKs
@@ -98,6 +107,25 @@ jobs:
           cp ${{ env.app_module }}/build/outputs/apk/debug/*.apk release_files/CosmicCanvas-${{ env.APP_VERSION }}-debug.apk
           cp ${{ env.app_module }}/build/outputs/apk/release/*.apk release_files/CosmicCanvas-${{ env.APP_VERSION }}-release.apk
           
+      # Create release notes with changelog
+      - name: Create Release Notes
+        run: |
+          cat > release_notes.md << EOL
+          ## CosmicCanvas Release v${{ env.RELEASE_VERSION }} (${{ env.date_today }})
+          
+          ### Changes in this release:
+          $(cat changelog.txt || echo "- First release")
+          
+          ### Downloads
+          - CosmicCanvas APK v${{ env.APP_VERSION }} (Debug & Release)
+          
+          Built automatically using GitHub Actions.
+          EOL
+          
+          # Display release notes for debugging
+          echo "Release notes content:"
+          cat release_notes.md
+  
       # Create GitHub Release
       - name: Create Release
         id: create_release
@@ -105,16 +133,7 @@ jobs:
         with:
           tag_name: v${{ env.RELEASE_VERSION }}
           name: Release v${{ env.RELEASE_VERSION }}
-          body: |
-            ## CosmicCanvas Release v${{ env.RELEASE_VERSION }} (${{ env.date_today }})
-            
-            ### Changes in this release:
-            ${{ env.CHANGELOG }}
-            
-            ### Downloads
-            - CosmicCanvas APK v${{ env.APP_VERSION }} (Debug & Release)
-            
-            Built automatically using GitHub Actions.
+          body_path: release_notes.md
           draft: false
           prerelease: false
           files: |
