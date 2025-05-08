@@ -1,1 +1,114 @@
-# CosmicCanvas
+# Cosmic Canvas
+
+A modern Android application that showcases NASA's Astronomy Picture of the Day (APOD) using the
+latest Android development techniques and libraries.
+
+## Features
+
+- Display NASA's Astronomy Picture of the Day with details
+- Browse through recent APOD entries (last 7 days)
+- View APOD entries in fullscreen mode with gesture support
+- Save favorite APOD entries for later viewing
+- Share APOD entries with others
+- Screen saver mode with animated transitions between recent APODs
+- Dark mode support
+- Offline support via local caching
+- Notifications for new APODs and keyword matches
+- Responsive design for different screen sizes and orientations
+- Secure storage for NASA API keys with encryption
+
+## Architecture
+
+This application follows Clean Architecture principles with MVVM pattern:
+
+- **Data Layer**: Repository implementation, API services, database access
+- **Domain Layer**: Business logic, use cases, repository interfaces
+- **Presentation Layer**: UI components, ViewModels, state management
+
+## Tech Stack
+
+- **Kotlin**: 100% Kotlin for app development
+- **Jetpack Compose**: Modern declarative UI toolkit
+- **Coroutines & Flow**: Asynchronous programming
+- **Hilt**: Dependency injection
+- **Room**: Database for local caching
+- **Retrofit & OkHttp**: Networking
+- **Coil**: Image loading
+- **WorkManager**: Background processing
+- **DataStore**: User preferences management
+- **Material 3**: Modern Material Design components
+- **Navigation Component**: In-app navigation
+
+## Setup
+
+1. Clone the repository
+2. Obtain a NASA API key from [NASA API Portal](https://api.nasa.gov/)
+3. Add the API key to the `app/build.gradle.kts` file (replace "DEMO_KEY" with your actual key):
+   ```kotlin
+   buildConfigField("String", "NASA_API_KEY", "\"YOUR_API_KEY_HERE\"")
+   ```
+4. Build and run the application
+
+## Database Schema
+
+### Data Tables
+
+#### 1. APOD Table (apods)
+
+```
++---------------+----------+-----------------------------------+
+| Field         | Type     | Description                       |
++---------------+----------+-----------------------------------+
+| date          | String   | Primary key, format YYYY-MM-DD    |
+| title         | String   | APOD title                        |
+| explanation   | String   | APOD explanation                  |
+| url           | String   | Media URL                         |
+| mediaType     | String   | Media type (image or video)       |
+| thumbnailUrl  | String   | Thumbnail URL                     |
+| copyright     | String   | Copyright information             |
+| isFavorite    | Boolean  | Favorite status                   |
++---------------+----------+-----------------------------------+
+```
+
+#### 2. Translation Table (translations)
+
+```
++---------------+----------+-----------------------------------+
+| Field         | Type     | Description                       |
++---------------+----------+-----------------------------------+
+| sourceText    | String   | Primary key 1, source text        |
+| targetLanguage| String   | Primary key 2, target language    |
+| translatedText| String   | Translated text                   |
+| sourceLanguage| String   | Source language code              |
+| timestamp     | Long     | Translation timestamp             |
++---------------+----------+-----------------------------------+
+```
+
+### Relationships and Queries
+
+The CosmicDatabase contains two main DAOs (Data Access Objects):
+
+#### ApodDao
+
+- `getApodByDate`: Retrieves an APOD by specific date
+- `getRecentApods`: Gets recent APODs with a specific limit
+- `getApodsBetweenDates`: Gets APODs within a date range
+- `getFavoriteApods`: Gets all favorite-marked APODs
+- `searchApods`: Searches for a keyword in title or explanation
+- `updateFavoriteStatus`: Updates the favorite status of an APOD
+
+#### TranslationDao
+
+- `insertTranslation`: Inserts a new translation or updates existing
+- `getTranslation`: Gets translation for source text and target language
+- `deleteExpiredTranslations`: Cleans up old translations
+- `clearAllTranslations`: Clears all translations
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [NASA APOD API](https://api.nasa.gov/) for providing the amazing content
+- All the open source libraries and tools that made this project possible

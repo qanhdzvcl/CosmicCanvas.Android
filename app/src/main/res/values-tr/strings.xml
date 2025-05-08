@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kozmik Tuval</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Ana Sayfa</string>
+    <string name="nav_history">Geçmiş</string>
+    <string name="nav_favorites">Favoriler</string>
+    <string name="nav_settings">Ayarlar</string>
+    
+    <!-- Home Screen -->
+    <string name="title_recent_apods">Son Astronomi Resimleri</string>
+    <string name="no_apods_found">Astronomi resmi bulunamadı.\nYenilemek için çekin.</string>
+    
+    <!-- Detail Screen -->
+    <string name="details_image_content_desc">Astronomi resmi</string>
+    <string name="share">Paylaş</string>
+    <string name="add_to_favorites">Favorilere ekle</string>
+    <string name="remove_from_favorites">Favorilerden çıkar</string>
+    <string name="open_in_browser">Tarayıcıda aç</string>
+    <string name="favorite">Favori</string>
+    <string name="favorited">Favorilendi</string>
+    <string name="nasa_site">NASA Sitesi</string>
+    <string name="content_copyright">© %1$s</string>
+    
+    <!-- Error Messages -->
+    <string name="error_network">Ağ hatası. Lütfen bağlantınızı kontrol edin.</string>
+    <string name="error_loading">Veri yüklenirken hata oluştu</string>
+    <string name="retry">Tekrar Dene</string>
+    
+    <!-- Notifications -->
+    <string name="notification_apod_title">Günün Astronomi Resmi</string>
+    <string name="notification_keyword_match">Anahtar Kelime Eşleşmesi: %1$s</string>
+    <string name="notification_keyword_description">Bugünkü APOD, izlediğiniz konuyu içeriyor: %1$s</string>
+    
+    <!-- Screen Saver -->
+    <string name="screen_saver_loading">Resimler yükleniyor…</string>
+    <string name="screen_saver_tap_to_exit">Çıkmak için herhangi bir yere dokunun</string>
+    
+    <!-- Settings -->
+    <string name="settings_theme">Tema</string>
+    <string name="settings_dark_theme">Karanlık Tema</string>
+    <string name="settings_notifications">Bildirimler</string>
+    <string name="settings_enable_notifications">Bildirimleri Etkinleştir</string>
+    <string name="settings_keywords">Anahtar Kelime Bildirimleri</string>
+    <string name="settings_add_keyword">Anahtar Kelime Ekle</string>
+    <string name="settings_screen_saver">Ekran Koruyucu</string>
+    <string name="settings_screen_saver_delay">Zaman Aşımı (dakika)</string>
+    <string name="settings_api_key">NASA API Anahtarı</string>
+    <string name="settings_api_key_info">Hız limitlerini artırmak için NASA API anahtarınızı girin</string>
+    <string name="settings_api_key_get">api.nasa.gov adresinden bir anahtar edinin</string>
+    <string name="settings_api_key_field">NASA API Anahtarı</string>
+    <string name="settings_api_key_placeholder">NASA API anahtarınızı girin</string>
+    <string name="settings_api_key_security_note">API anahtarınız şifrelenerek güvenli bir şekilde saklanacaktır. Kaydedildikten sonra asla görüntülenmeyecektir.</string>
+    <string name="settings_api_key_save">API Anahtarını Kaydet</string>
+    <string name="settings_api_key_reset">Varsayılan API Anahtarına Sıfırla</string>
+    <string name="settings_api_key_saved">API anahtarı başarıyla kaydedildi</string>
+    <string name="settings_api_key_custom_set">✓ Özel API anahtarı ayarlandı</string>
+    
+    <!-- Language Settings -->
+    <string name="settings_language">Dil</string>
+    <string name="settings_language_system">Sistem Dili</string>
+    <string name="settings_language_english">İngilizce</string>
+    <string name="settings_language_turkish">Türkçe</string>
+    <string name="settings_language_german">Almanca</string>
+    <string name="settings_language_spanish">İspanyolca</string>
+    
+    <!-- Translation -->
+    <string name="translate">Çevir</string>
+    <string name="translate_to_app_language">Uygulama diline çevir</string>
+    <string name="translate_to_another_language">Başka bir dile çevir…</string>
+    <string name="language_selection_title">Dil Seçin</string>
+    <string name="language_selection_description">Çeviri için bir dil seçin</string>
+    <string name="translating">Çevriliyor…</string>
+    <string name="translation_failed">Çeviri başarısız oldu</string>
+    <string name="original_content">Orijinal İçerik</string>
+    <string name="translated_content">Çevrilmiş İçerik</string>
+    <string name="select_language">Dil Seçin</string>
+    <string name="recently_used">Son Kullanılanlar</string>
+    <string name="all_languages">Tüm Diller</string>
+    <string name="google_cloud_translation_api_key">Google Cloud Çeviri API Anahtarı</string>
+    <string name="google_cloud_translation_api_key_info">Çeviri için Google Cloud Translation API anahtarınızı girin</string>
+    <string name="google_cloud_translation_api_key_placeholder">Google Cloud Translation API anahtarınızı girin</string>
+    <string name="ok">Tamam</string>
+    <string name="cancel">İptal</string>
+    <string name="back">Geri</string>
+    <string name="exit_fullscreen">Tam ekrandan çık</string>
+    <string name="play_video">Videoyu oynat</string>
+    <string name="recent_astronomy_pictures">Son Astronomi Resimleri</string>
+    <string name="apod_details">APOD Detayları</string>
+</resources>

@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Cosmic Canvas</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_history">History</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Home Screen -->
+    <string name="title_recent_apods">Recent Astronomy Pictures</string>
+    <string name="no_apods_found">No astronomy pictures found.\nPull to refresh.</string>
+    
+    <!-- Detail Screen -->
+    <string name="details_image_content_desc">Astronomy picture</string>
+    <string name="share">Share</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="remove_from_favorites">Remove from favorites</string>
+    <string name="open_in_browser">Open in browser</string>
+    <string name="favorite">Favorite</string>
+    <string name="favorited">Favorited</string>
+    <string name="nasa_site">NASA Site</string>
+    <string name="content_copyright">© %1$s</string>
+    
+    <!-- Error Messages -->
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_loading">Error loading data</string>
+    <string name="retry">Retry</string>
+    
+    <!-- Notifications -->
+    <string name="notification_apod_title">Today\'s Astronomy Picture</string>
+    <string name="notification_keyword_match">Keyword Match: %1$s</string>
+    <string name="notification_keyword_description">Today\'s APOD features your watched topic: %1$s</string>
+    
+    <!-- Screen Saver -->
+    <string name="screen_saver_loading">Loading images…</string>
+    <string name="screen_saver_tap_to_exit">Tap anywhere to exit</string>
+    
+    <!-- Settings -->
+    <string name="settings_theme">Theme</string>
+    <string name="settings_dark_theme">Dark Theme</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_enable_notifications">Enable Notifications</string>
+    <string name="settings_keywords">Keyword Notifications</string>
+    <string name="settings_add_keyword">Add Keyword</string>
+    <string name="settings_screen_saver">Screen Saver</string>
+    <string name="settings_screen_saver_delay">Timeout (minutes)</string>
+    <string name="settings_api_key">NASA API Key</string>
+    <string name="settings_api_key_info">Enter your NASA API key to increase rate limits</string>
+    <string name="settings_api_key_get">Get a key at api.nasa.gov</string>
+    <string name="settings_api_key_field">NASA API Key</string>
+    <string name="settings_api_key_placeholder">Enter your NASA API key</string>
+    <string name="settings_api_key_security_note">Your API key will be encrypted and stored securely. It will never be displayed after saving.</string>
+    <string name="settings_api_key_save">Save API Key</string>
+    <string name="settings_api_key_reset">Reset to Default API Key</string>
+    <string name="settings_api_key_saved">API key saved successfully</string>
+    <string name="settings_api_key_custom_set">✓ Custom API key is set</string>
+    
+    <!-- Language Settings -->
+    <string name="settings_language">Language</string>
+    <string name="settings_language_system">System Language</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_language_turkish">Turkish</string>
+    <string name="settings_language_german">German</string>
+    <string name="settings_language_spanish">Spanish</string>
+    
+    <!-- Translation -->
+    <string name="translate">Translate</string>
+    <string name="translate_to_app_language">Translate to app language</string>
+    <string name="translate_to_another_language">Translate to another language…</string>
+    <string name="translating">Translating…</string>
+    <string name="translation_failed">Translation failed</string>
+    <string name="original_content">Original Content</string>
+    <string name="translated_content">Translated Content</string>
+    <string name="select_language">Select Language</string>
+    <string name="recently_used">Recently Used</string>
+    <string name="all_languages">All Languages</string>
+    <string name="google_cloud_translation_api_key">Google Cloud Translation API Key</string>
+    <string name="google_cloud_translation_api_key_info">Enter your Google Cloud Translation API key for translations</string>
+    <string name="google_cloud_translation_api_key_placeholder">Enter your Google Cloud Translation API key</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="back">Back</string>
+    <string name="exit_fullscreen">Exit fullscreen</string>
+    <string name="play_video">Play video</string>
+    <string name="recent_astronomy_pictures">Recent Astronomy Pictures</string>
+    <string name="apod_details">APOD Details</string>
+    
+    <!-- Language Selection Dialog -->
+    <string name="language_selection_title">Select Language</string>
+    <string name="language_selection_description">Choose a language for translation</string>
+</resources>

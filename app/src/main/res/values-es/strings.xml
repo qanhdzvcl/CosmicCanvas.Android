@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lienzo Cósmico</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_history">Historial</string>
+    <string name="nav_favorites">Favoritos</string>
+    <string name="nav_settings">Ajustes</string>
+    
+    <!-- Home Screen -->
+    <string name="title_recent_apods">Imágenes Astronómicas Recientes</string>
+    <string name="no_apods_found">No se encontraron imágenes astronómicas.\nDesliza para actualizar.</string>
+    
+    <!-- Detail Screen -->
+    <string name="details_image_content_desc">Imagen astronómica</string>
+    <string name="share">Compartir</string>
+    <string name="add_to_favorites">Añadir a favoritos</string>
+    <string name="remove_from_favorites">Eliminar de favoritos</string>
+    <string name="open_in_browser">Abrir en navegador</string>
+    <string name="favorite">Favorito</string>
+    <string name="favorited">Añadido a favoritos</string>
+    <string name="nasa_site">Sitio de la NASA</string>
+    <string name="content_copyright">© %1$s</string>
+    
+    <!-- Error Messages -->
+    <string name="error_network">Error de red. Por favor, comprueba tu conexión.</string>
+    <string name="error_loading">Error al cargar datos</string>
+    <string name="retry">Reintentar</string>
+    
+    <!-- Notifications -->
+    <string name="notification_apod_title">Imagen Astronómica del Día</string>
+    <string name="notification_keyword_match">Coincidencia de palabra clave: %1$s</string>
+    <string name="notification_keyword_description">El APOD de hoy presenta tu tema observado: %1$s</string>
+    
+    <!-- Screen Saver -->
+    <string name="screen_saver_loading">Cargando imágenes…</string>
+    <string name="screen_saver_tap_to_exit">Toca en cualquier lugar para salir</string>
+    
+    <!-- Settings -->
+    <string name="settings_theme">Tema</string>
+    <string name="settings_dark_theme">Tema Oscuro</string>
+    <string name="settings_notifications">Notificaciones</string>
+    <string name="settings_enable_notifications">Activar Notificaciones</string>
+    <string name="settings_keywords">Notificaciones de Palabras Clave</string>
+    <string name="settings_add_keyword">Añadir Palabra Clave</string>
+    <string name="settings_screen_saver">Salvapantallas</string>
+    <string name="settings_screen_saver_delay">Tiempo de espera (minutos)</string>
+    <string name="settings_api_key">Clave API de NASA</string>
+    <string name="settings_api_key_info">Introduce tu clave API de NASA para aumentar los límites de velocidad</string>
+    <string name="settings_api_key_get">Obtén una clave en api.nasa.gov</string>
+    <string name="settings_api_key_field">Clave API de NASA</string>
+    <string name="settings_api_key_placeholder">Introduce tu clave API de NASA</string>
+    <string name="settings_api_key_security_note">Tu clave API se cifrará y almacenará de forma segura. Nunca se mostrará después de guardarla.</string>
+    <string name="settings_api_key_save">Guardar Clave API</string>
+    <string name="settings_api_key_reset">Restablecer a Clave API Predeterminada</string>
+    <string name="settings_api_key_saved">Clave API guardada correctamente</string>
+    <string name="settings_api_key_custom_set">✓ Clave API personalizada configurada</string>
+    
+    <!-- Language Settings -->
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_system">Idioma del Sistema</string>
+    <string name="settings_language_english">Inglés</string>
+    <string name="settings_language_turkish">Turco</string>
+    <string name="settings_language_german">Alemán</string>
+    <string name="settings_language_spanish">Español</string>
+    
+    <!-- Translation -->
+    <string name="translate">Traducir</string>
+    <string name="translate_to_app_language">Traducir al idioma de la aplicación</string>
+    <string name="translate_to_another_language">Traducir a otro idioma…</string>
+    <string name="language_selection_title">Seleccionar Idioma</string>
+    <string name="language_selection_description">Elige un idioma para traducir</string>
+    <string name="translating">Traduciendo…</string>
+    <string name="translation_failed">Error en la traducción</string>
+    <string name="original_content">Contenido Original</string>
+    <string name="translated_content">Contenido Traducido</string>
+    <string name="select_language">Seleccionar Idioma</string>
+    <string name="recently_used">Usados Recientemente</string>
+    <string name="all_languages">Todos los Idiomas</string>
+    <string name="google_cloud_translation_api_key">Clave API de Google Cloud Translation</string>
+    <string name="google_cloud_translation_api_key_info">Introduce tu clave API de Google Cloud Translation para traducciones</string>
+    <string name="google_cloud_translation_api_key_placeholder">Introduce tu clave API de Google Cloud Translation</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="back">Atrás</string>
+    <string name="exit_fullscreen">Salir de pantalla completa</string>
+    <string name="play_video">Reproducir vídeo</string>
+    <string name="recent_astronomy_pictures">Imágenes Astronómicas Recientes</string>
+    <string name="apod_details">Detalles del APOD</string>
+</resources>
