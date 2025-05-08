@@ -3,7 +3,19 @@
 A modern Android application that showcases NASA's Astronomy Picture of the Day (APOD) using the
 latest Android development techniques and libraries.
 
-<img src="https://github.com/user-attachments/assets/1ea0452a-2902-48d8-aee9-772c9165191c" width="400" alt="CosmicCanvas.Logo"/>
+<img src="https://github.com/user-attachments/assets/bab85264-c563-4aab-b89e-ddfda73ea096" width="300" alt="CosmicCanvas.Logo"/>
+
+## Screen Saver Mode
+
+### Settings > Screen Saver Timeout
+Users can configure the screen saver timeout period from this menu. After the selected period of inactivity, the device will automatically activate the screen saver mode.
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/1dffd56e-78a7-4c7b-ac4a-43edf1849b36" />
+
+### Automatic Screen Saver Display
+Screen saver mode displays NASA’s Astronomy Photo of the Day (APOD) for the past 7 days, creating a visually engaging and educational experience.
+
+https://github.com/user-attachments/assets/0c4b48bc-92bd-437a-ab90-7507a8fb42e1
 
 ## Features
 
