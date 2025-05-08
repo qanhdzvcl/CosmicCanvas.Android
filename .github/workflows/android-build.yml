@@ -35,17 +35,37 @@ jobs:
     - name: Build Release APK
       run: ./gradlew assembleRelease
       
+    # Sign release APK (optional - disabled for now)
+    #- name: Sign Release APK
+    #  uses: r0adkll/sign-android-release@v1
+    #  with:
+    #    releaseDirectory: app/build/outputs/apk/release
+    #    signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+    #    alias: ${{ secrets.KEY_ALIAS }}
+    #    keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+    #    keyPassword: ${{ secrets.KEY_PASSWORD }}
+      
+    # Rename the APKs for better identification
+    - name: Prepare Release Files
+      if: startsWith(github.ref, 'refs/tags/v')
+      run: |
+        mkdir -p release_files
+        cp app/build/outputs/apk/debug/app-debug.apk release_files/CosmicCanvas-${{ github.ref_name }}-debug.apk
+        cp app/build/outputs/apk/release/app-release-unsigned.apk release_files/CosmicCanvas-${{ github.ref_name }}-release.apk
+      
     - name: Upload Debug APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
         path: app/build/outputs/apk/debug/app-debug.apk
+        retention-days: 14
         
     - name: Upload Release APK
       uses: actions/upload-artifact@v4
       with:
         name: app-release
         path: app/build/outputs/apk/release/app-release-unsigned.apk
+        retention-days: 14
 
     # Generate changelog from commits since last tag
     - name: Generate Changelog
@@ -77,10 +97,12 @@ jobs:
           ${{ env.CHANGELOG }}
           
           ### Downloads
-          - Debug APK: Download from artifacts
-          - Release APK: Download from artifacts
+          - Debug APK: CosmicCanvas-${{ github.ref_name }}-debug.apk
+          - Release APK: CosmicCanvas-${{ github.ref_name }}-release.apk
         files: |
-          app/build/outputs/apk/debug/app-debug.apk
-          app/build/outputs/apk/release/app-release-unsigned.apk
+          release_files/CosmicCanvas-${{ github.ref_name }}-debug.apk
+          release_files/CosmicCanvas-${{ github.ref_name }}-release.apk
         draft: false
         prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
