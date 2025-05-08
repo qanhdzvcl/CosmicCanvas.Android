@@ -57,11 +57,7 @@ This application follows Clean Architecture principles with MVVM pattern:
 
 1. Clone the repository
 2. Obtain a NASA API key from [NASA API Portal](https://api.nasa.gov/)
-3. Add the API key to the `app/build.gradle.kts` file (replace "DEMO_KEY" with your actual key):
-   ```kotlin
-   buildConfigField("String", "NASA_API_KEY", "\"YOUR_API_KEY_HERE\"")
-   ```
-4. Build and run the application
+3. Build and run the application
 
 ## Database Schema
 
