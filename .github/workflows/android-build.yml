@@ -28,10 +28,6 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
-
-    - name: Set NASA API Key
-      run: |
-        sed -i 's/DEMO_KEY/${{ secrets.NASA_API_KEY }}/g' app/build.gradle.kts
       
     - name: Build Debug APK
       run: ./gradlew assembleDebug
