@@ -8,6 +8,12 @@ on:
       - '.github/**'
       - 'LICENSE'
 
+# Sets permissions of the GITHUB_TOKEN to allow creation of releases
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   auto-tag-release:
     runs-on: ubuntu-latest
