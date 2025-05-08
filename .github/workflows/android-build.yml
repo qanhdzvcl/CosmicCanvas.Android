@@ -1,0 +1,90 @@
+name: Android Build and Release
+
+on:
+  push:
+    branches: [ "main" ]
+    tags:
+      - "v*"
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Fetch all history for commit messages
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Build with Gradle
+      run: ./gradlew build
+
+    - name: Set NASA API Key
+      run: |
+        sed -i 's/DEMO_KEY/${{ secrets.NASA_API_KEY }}/g' app/build.gradle.kts
+      
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug
+
+    - name: Build Release APK
+      run: ./gradlew assembleRelease
+      
+    - name: Upload Debug APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-debug
+        path: app/build/outputs/apk/debug/app-debug.apk
+        
+    - name: Upload Release APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-release
+        path: app/build/outputs/apk/release/app-release-unsigned.apk
+
+    # Generate changelog from commits since last tag
+    - name: Generate Changelog
+      id: changelog
+      if: startsWith(github.ref, 'refs/tags/v')
+      run: |
+        PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+        if [ -z "$PREVIOUS_TAG" ]; then
+          echo "No previous tag found, including all commits"
+          CHANGELOG=$(git log --pretty=format:"- %s (%h)" --reverse)
+        else
+          echo "Previous tag: $PREVIOUS_TAG"
+          CHANGELOG=$(git log ${PREVIOUS_TAG}..HEAD --pretty=format:"- %s (%h)" --reverse)
+        fi
+        echo "CHANGELOG<<EOF" >> $GITHUB_ENV
+        echo "$CHANGELOG" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+
+    # Create release when a tag is pushed
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: softprops/action-gh-release@v1
+      with:
+        name: Release ${{ github.ref_name }}
+        body: |
+          ## Cosmic Canvas ${{ github.ref_name }}
+          
+          ### Changes in this release:
+          ${{ env.CHANGELOG }}
+          
+          ### Downloads
+          - Debug APK: Download from artifacts
+          - Release APK: Download from artifacts
+        files: |
+          app/build/outputs/apk/debug/app-debug.apk
+          app/build/outputs/apk/release/app-release-unsigned.apk
+        draft: false
+        prerelease: false
