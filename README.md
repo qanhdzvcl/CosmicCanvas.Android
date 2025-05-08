@@ -3,6 +3,8 @@
 A modern Android application that showcases NASA's Astronomy Picture of the Day (APOD) using the
 latest Android development techniques and libraries.
 
+<img src="https://github.com/user-attachments/assets/1ea0452a-2902-48d8-aee9-772c9165191c" width="400" alt="CosmicCanvas.Logo"/>
+
 ## Features
 
 - Display NASA's Astronomy Picture of the Day with details
