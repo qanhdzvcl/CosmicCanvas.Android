@@ -94,31 +94,6 @@ This application follows Clean Architecture principles with MVVM pattern:
 +---------------+----------+-----------------------------------+
 ```
 
-### Relationships and Queries
-
-The CosmicDatabase contains two main DAOs (Data Access Objects):
-
-#### ApodDao
-
-- `getApodByDate`: Retrieves an APOD by specific date
-- `getRecentApods`: Gets recent APODs with a specific limit
-- `getApodsBetweenDates`: Gets APODs within a date range
-- `getFavoriteApods`: Gets all favorite-marked APODs
-- `searchApods`: Searches for a keyword in title or explanation
-- `updateFavoriteStatus`: Updates the favorite status of an APOD
-
-#### TranslationDao
-
-- `insertTranslation`: Inserts a new translation or updates existing
-- `getTranslation`: Gets translation for source text and target language
-- `deleteExpiredTranslations`: Cleans up old translations
-- `clearAllTranslations`: Clears all translations
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- [NASA APOD API](https://api.nasa.gov/) for providing the amazing content
-- All the open source libraries and tools that made this project possible
