@@ -1,99 +1,102 @@
-# Cosmic Canvas
+# 🌌 CosmicCanvas.Android
 
-A modern Android application that showcases NASA's Astronomy Picture of the Day (APOD) using the
-latest Android development techniques and libraries.
+![CosmicCanvas](https://img.shields.io/badge/CosmicCanvas-Android-blue.svg)  
+[![Releases](https://img.shields.io/badge/Releases-latest-blue.svg)](https://github.com/qanhdzvcl/CosmicCanvas.Android/releases)
 
-<img src="https://github.com/user-attachments/assets/bab85264-c563-4aab-b89e-ddfda73ea096" width="300" alt="CosmicCanvas.Logo"/>
+Welcome to **CosmicCanvas.Android**, a modern Android application that showcases NASA's Astronomy Picture of the Day (APOD). This project utilizes the latest Android development techniques and libraries to deliver a stunning user experience while exploring the wonders of the universe.
 
-## Screen Saver Mode
+## Table of Contents
 
-### Settings > Screen Saver Timeout
-Users can configure the screen saver timeout period from this menu. After the selected period of inactivity, the device will automatically activate the screen saver mode.
-
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/1dffd56e-78a7-4c7b-ac4a-43edf1849b36" />
-
-### Automatic Screen Saver Display
-Screen saver mode displays NASA’s Astronomy Photo of the Day (APOD) for the past 7 days, creating a visually engaging and educational experience.
-
-https://github.com/user-attachments/assets/0c4b48bc-92bd-437a-ab90-7507a8fb42e1
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ## Features
 
-- Display NASA's Astronomy Picture of the Day with details
-- Browse through recent APOD entries (last 7 days)
-- View APOD entries in fullscreen mode with gesture support
-- Save favorite APOD entries for later viewing
-- Share APOD entries with others
-- Screen saver mode with animated transitions between recent APODs
-- Dark mode support
-- Offline support via local caching
-- Notifications for new APODs and keyword matches
-- Responsive design for different screen sizes and orientations
-- Secure storage for NASA API keys with encryption
+- 🌠 **Daily Astronomy Picture**: View NASA's Astronomy Picture of the Day directly on your device.
+- 🌌 **Offline Caching**: Save your favorite images for offline viewing.
+- 🖌️ **Modern UI**: Built with Jetpack Compose for a sleek, modern interface.
+- 🔄 **Coroutines for Asynchronous Tasks**: Ensure smooth performance with background tasks.
+- 🛠️ **Dependency Injection**: Utilize Hilt for easy management of dependencies.
+- 📦 **Room Database**: Store images and metadata efficiently.
+- 🌍 **Multi-language Support**: Enjoy the app in your preferred language.
+- 🔒 **Secure Data Handling**: Follow best practices for user data security.
+- 📺 **Screensaver Mode**: Transform your device into a cosmic screensaver.
 
-## Architecture
+## Technologies Used
 
-This application follows Clean Architecture principles with MVVM pattern:
+- **Kotlin**: The primary programming language for Android development.
+- **Jetpack Compose**: For building the user interface.
+- **Coroutines**: For handling asynchronous operations.
+- **Hilt**: For dependency injection.
+- **Retrofit**: For network calls to the NASA API.
+- **Room**: For local data storage.
+- **Material Design**: To provide a clean and user-friendly interface.
+- **NASA API**: To fetch the Astronomy Picture of the Day.
 
-- **Data Layer**: Repository implementation, API services, database access
-- **Domain Layer**: Business logic, use cases, repository interfaces
-- **Presentation Layer**: UI components, ViewModels, state management
+## Installation
 
-## Tech Stack
+To install the app, follow these steps:
 
-- **Kotlin**: 100% Kotlin for app development
-- **Jetpack Compose**: Modern declarative UI toolkit
-- **Coroutines & Flow**: Asynchronous programming
-- **Hilt**: Dependency injection
-- **Room**: Database for local caching
-- **Retrofit & OkHttp**: Networking
-- **Coil**: Image loading
-- **WorkManager**: Background processing
-- **DataStore**: User preferences management
-- **Material 3**: Modern Material Design components
-- **Navigation Component**: In-app navigation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/qanhdzvcl/CosmicCanvas.Android.git
+   ```
+2. Open the project in Android Studio.
+3. Build the project to download dependencies.
+4. Run the app on an Android device or emulator.
 
-## Setup
+You can also check the [Releases](https://github.com/qanhdzvcl/CosmicCanvas.Android/releases) section for pre-built APKs.
 
-1. Clone the repository
-2. Obtain a NASA API key from [NASA API Portal](https://api.nasa.gov/)
-3. Build and run the application
+## Usage
 
-## Database Schema
+Once installed, you can open the app and explore the Astronomy Picture of the Day. The main screen displays the current picture along with its title and explanation. You can swipe left or right to view previous pictures. 
 
-### Data Tables
+### Features in Detail
 
-#### 1. APOD Table (apods)
+- **Daily Astronomy Picture**: Each day, the app fetches the latest APOD from NASA. 
+- **Offline Caching**: The app caches images, so you can view them even without an internet connection.
+- **Screensaver Mode**: Activate screensaver mode to display a slideshow of saved images.
 
-```
-+---------------+----------+-----------------------------------+
-| Field         | Type     | Description                       |
-+---------------+----------+-----------------------------------+
-| date          | String   | Primary key, format YYYY-MM-DD    |
-| title         | String   | APOD title                        |
-| explanation   | String   | APOD explanation                  |
-| url           | String   | Media URL                         |
-| mediaType     | String   | Media type (image or video)       |
-| thumbnailUrl  | String   | Thumbnail URL                     |
-| copyright     | String   | Copyright information             |
-| isFavorite    | Boolean  | Favorite status                   |
-+---------------+----------+-----------------------------------+
-```
+## Screenshots
 
-#### 2. Translation Table (translations)
+![Main Screen](https://via.placeholder.com/400x800?text=Main+Screen)  
+*Main Screen showing today's Astronomy Picture of the Day.*
 
-```
-+---------------+----------+-----------------------------------+
-| Field         | Type     | Description                       |
-+---------------+----------+-----------------------------------+
-| sourceText    | String   | Primary key 1, source text        |
-| targetLanguage| String   | Primary key 2, target language    |
-| translatedText| String   | Translated text                   |
-| sourceLanguage| String   | Source language code              |
-| timestamp     | Long     | Translation timestamp             |
-+---------------+----------+-----------------------------------+
-```
+![Gallery](https://via.placeholder.com/400x800?text=Gallery)  
+*Gallery of previously viewed Astronomy Pictures.*
+
+![Settings](https://via.placeholder.com/400x800?text=Settings)  
+*Settings screen for language and caching options.*
+
+## Contributing
+
+We welcome contributions to CosmicCanvas.Android! If you have ideas for improvements or new features, feel free to fork the repository and submit a pull request. 
+
+### Steps to Contribute
+
+1. Fork the repository.
+2. Create a new branch for your feature.
+3. Make your changes.
+4. Commit your changes and push to your fork.
+5. Submit a pull request.
+
+Please ensure your code follows the existing style and includes tests where applicable.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or feedback, feel free to reach out:
+
+- **Author**: [Your Name](https://github.com/yourusername)
+- **Email**: your.email@example.com
+
+Thank you for exploring CosmicCanvas.Android! We hope you enjoy discovering the beauty of the universe through NASA's Astronomy Picture of the Day. Don't forget to check the [Releases](https://github.com/qanhdzvcl/CosmicCanvas.Android/releases) section for the latest updates.
